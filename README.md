@@ -30,16 +30,16 @@ Make sure you are in the Docker-Server-Client folder to execute the scripts
 
 ### Run server - param1: port  default=5000
 ```bash
-bash ./run_server.sh 5000   
+./run_server.sh 5000   
 ```
 ### Run client - param1: port , param2: address  default= server
 The address value can be changed in the run_server.sh script
 ```bash
-bash ./run_client.sh server 5000   
+./run_client.sh server 5000   
 ```
 ### Clean your docker to remove / try again
 ```bash
-bash ./cleanup.sh   
+./cleanup.sh   
 ```
 ---
 
@@ -52,12 +52,15 @@ bash docker run --rm -it -v servervol:/data busybox sh
 
 ### Client
 ```bash
-bash docker run --rm -it -v clientvol:/data busybox sh
+docker run --rm -it -v clientvol:/data busybox sh
 ```
 
-### The temperary image is mounted to /data so you can find the random.txt file we created and copied from there 
+#### The temperary image is mounted to /data so you can find the random.txt file we created and copied from there 
 ```bash
-bash cat /data/random.txt
+cat /data/random.txt
 ```
+#### Type exit to get out of the busybox temporary image
 
-
+```bash
+exit
+```
