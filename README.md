@@ -3,7 +3,7 @@
 A simple Docker project where we mount 2 seperate volumes to containers and move the data using HTTP request in a docker network.  
 
 - [How it Works](#%EF%B8%8F-how-it-works)
-- [Requirements]([#-requirements)
+- [Requirements](#-requirements)
 - [Scripts](#-scripts)
 - [How to check Volumes](#-checking-volumes)
 
@@ -47,7 +47,7 @@ The address value can be changed in the run_server.sh script
 We can use busybox to mount the volumes to a temporary image
 ### Server
 ```bash
-bash docker run --rm -it -v servervol:/data busybox sh
+docker run --rm -it -v servervol:/data busybox sh
 ```
 
 ### Client
@@ -55,12 +55,15 @@ bash docker run --rm -it -v servervol:/data busybox sh
 docker run --rm -it -v clientvol:/data busybox sh
 ```
 
-#### The temperary image is mounted to /data so you can find the random.txt file we created and copied from there 
+---
+### Check the file contents
+The temperary image is mounted to `/data` so you can find the random.txt file we created and copied from there
 ```bash
 cat /data/random.txt
 ```
-#### Type exit to get out of the busybox temporary image
+Type exit to get out of the busybox temporary image
 
 ```bash
 exit
 ```
+
